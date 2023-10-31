@@ -10,9 +10,12 @@ module.exports = {
   extends: ['prettier'],
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': ['error'],
     semi: ['error'],
-    indent: ['error', 2, { SwitchCase: 1 }],
+    indent: [
+      'error',
+      2,
+      { SwitchCase: 1, ignoredNodes: ['TemplateLiteral *'] },
+    ],
     'comma-dangle': ['error', 'always-multiline'],
     'arrow-body-style': ['error', 'as-needed'],
     curly: ['error', 'multi-line'],
@@ -41,6 +44,12 @@ module.exports = {
         caughtErrors: 'none',
         ignoreRestSiblings: true,
         vars: 'all',
+      },
+    ],
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
       },
     ],
   },
