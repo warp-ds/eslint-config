@@ -7,6 +7,7 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
+  ignorePatterns: ['CHANGELOG.md', 'package-lock.json'],
   plugins: ['prettier'],
   rules: {
     semi: ['error'],
@@ -52,6 +53,7 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
+        printWidth: 999,
       },
     ],
   },
