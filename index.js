@@ -7,13 +7,16 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
+  extends: ['prettier'],
+  plugins: ['prettier'],
   rules: {
-    'semi': ['error'],
-    'indent': ['error', 2, { SwitchCase: 1 }],
+    'prettier/prettier': ['error'],
+    semi: ['error'],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'comma-dangle': ['error', 'always-multiline'],
     'arrow-body-style': ['error', 'as-needed'],
-    'curly': ['error', 'multi-line'],
-    'eqeqeq': ['error', 'smart'],
+    curly: ['error', 'multi-line'],
+    eqeqeq: ['error', 'smart'],
     'key-spacing': ['error', { mode: 'minimum' }],
     'no-confusing-arrow': ['error'],
     'object-curly-spacing': ['error', 'always'],
@@ -31,6 +34,14 @@ module.exports = {
     'nonblock-statement-body-position': 'error',
     'no-useless-return': 'error',
     'no-multiple-empty-lines': 'error',
-    'no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none', ignoreRestSiblings: true, vars: 'all' }],
+    'no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        caughtErrors: 'none',
+        ignoreRestSiblings: true,
+        vars: 'all',
+      },
+    ],
   },
-}
+};
