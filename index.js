@@ -7,21 +7,23 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
-  extends: ['prettier'],
   plugins: ['prettier'],
   rules: {
     semi: ['error'],
     indent: [
       'error',
       2,
-      { SwitchCase: 1, ignoredNodes: ['TemplateLiteral *'] },
+      {
+        MemberExpression: 'off',
+        SwitchCase: 1,
+        ignoredNodes: ['TemplateLiteral *', 'ArrowFunctionExpression'],
+      },
     ],
     'comma-dangle': ['error', 'always-multiline'],
     'arrow-body-style': ['error', 'as-needed'],
     curly: ['error', 'multi-line'],
     eqeqeq: ['error', 'smart'],
     'key-spacing': ['error', { mode: 'minimum' }],
-    'no-confusing-arrow': ['error'],
     'object-curly-spacing': ['error', 'always'],
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
     'linebreak-style': 'error',
