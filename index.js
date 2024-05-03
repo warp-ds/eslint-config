@@ -53,8 +53,21 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
-        printWidth: 999,
-      },
+        trailingComma: "all",
+        tabWidth: 4,
+        printWidth: 140,
+        bracketSameLine: true,
+        plugins: ["@serverless-guru/prettier-plugin-import-order"],
+        importOrder: ["<THIRD_PARTY_MODULES>", "^[./]"],
+        importOrderTypeImportsToTop: false,
+        importOrderTypeImportsToBottom: true,
+        importOrderBuiltinModulesToTop: true,
+        importOrderCaseInsensitive: true,
+        importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy", "importAssertions"],
+        importOrderMergeDuplicateImports: true,
+        importOrderSeparation: true,
+        importOrderSortIndividualImports: true
+      }
     ],
   },
 };
