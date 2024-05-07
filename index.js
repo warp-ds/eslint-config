@@ -56,17 +56,16 @@ module.exports = {
         trailingComma: "all",
         printWidth: 140,
         bracketSameLine: true,
-        plugins: ["@serverless-guru/prettier-plugin-import-order"],
-        importOrder: ["<THIRD_PARTY_MODULES>", "^[./]"],
-        importOrderTypeImportsToTop: false,
-        importOrderTypeImportsToBottom: true,
-        importOrderBuiltinModulesToTop: true,
-        importOrderCaseInsensitive: true,
-        importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy", "importAssertions"],
-        importOrderMergeDuplicateImports: true,
-        importOrderSeparation: true,
-        importOrderSortIndividualImports: true
       }
     ],
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+        memberSyntaxSortOrder: ['all', 'single', 'multiple', 'none'],
+        allowSeparatedGroups: true,
+      }
+    ]
   },
 };
