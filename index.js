@@ -8,7 +8,7 @@ module.exports = {
     sourceType: 'module',
   },
   ignorePatterns: ['CHANGELOG.md', 'package-lock.json'],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'import'],
   rules: {
     semi: ['error'],
     indent: [
@@ -53,8 +53,29 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
-        printWidth: 999,
-      },
+        trailingComma: "all",
+        printWidth: 140,
+        bracketSameLine: true
+      }
     ],
+    'import/order': ['error', {
+      "groups": ["builtin", "external", "parent", "sibling", "index"],
+      "pathGroups": [
+        {
+          "pattern": "{react,react-dom/**,vue,lit}",
+          "group": "external",
+          "position": "before"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["react", "vue", "lit"],
+      "newlines-between": "always",
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      }
+    }],
+    'import/newline-after-import': ['error', { "count": 1 }],
+    'import/first': 'error',
+    'import/no-duplicates': 'error'
   },
 };
