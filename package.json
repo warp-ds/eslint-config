@@ -1,20 +1,47 @@
 {
   "name": "@warp-ds/eslint-config",
   "version": "1.1.0",
-  "main": "index.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/default.d.ts",
+      "default": "./lib/default.js"
+    },
+    "./typescript": {
+      "types": "./types/typescript.d.ts",
+      "default": "./lib/typescript.js"
+    }
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "git clean -fdx",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "types": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "@eslint/js": "9.16.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-prettier": "5.2.1",
-    "eslint": "9.16.0",
-    "globals": "15.13.0"
+    "eslint": ">=10"
+  },
+  "dependencies": {
+    "@e18e/eslint-plugin": "^0.5.0",
+    "@eslint/js": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-depend": "^1.4.0",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.6.0"
+  },
+  "optionalDependencies": {
+    "typescript-eslint": "^8.61.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.4.1",
+    "semantic-release": "^25.0.5",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "include": ["./lib/*.js"],
+  "compilerOptions": {
+    "checkJs": true,
+    "types": [],
+    "lib": ["esnext", "DOM"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "rootDir": "lib",
+    "outDir": "types",
+    "declaration": true,
+    "emitDeclarationOnly": true
+  }
+}
