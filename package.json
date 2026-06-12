@@ -24,7 +24,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warp-ds/eslint-config.git"
+  },
   "peerDependencies": {
     "eslint": ">=10"
   },
